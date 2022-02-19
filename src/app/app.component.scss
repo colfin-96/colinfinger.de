@@ -1,0 +1,16 @@
+.wrapper {
+  @apply columns-3;
+  //   grid-flow-row sm:grid-cols-1 md:grid-cols-3;
+}
+
+app-card {
+  //   @apply ;
+}
+
+h1 {
+  @apply font-semibold;
+}
+
+span {
+  @apply text-gray-600 text-xs;
+}

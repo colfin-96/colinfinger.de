@@ -1,0 +1,17 @@
+.wrapper {
+  background-color: transparent;
+  position: fixed;
+  width: 100vw;
+  opacity: 0;
+
+  animation: wrapper 2s 2s forwards;
+}
+
+@keyframes wrapper {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
