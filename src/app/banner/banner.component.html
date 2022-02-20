@@ -1,6 +1,13 @@
-<section class="banner">
+<section
+  class="banner"
+  *ngIf="componentVisible"
+  [@initializeBanner]="true"
+  (@initializeBanner.done)="onInitializeBannerDone($event)"
+>
   <div class="inner">
-    <h2>colinfinger.de</h2>
-    <p>My personal website</p>
+    <div class="line" [@line]="true"></div>
+    <h2 [@innerText]="true">colinfinger.de</h2>
+    <p [@innerText2]="true">My personal website</p>
+    <div class="line" [@line]="true"></div>
   </div>
 </section>

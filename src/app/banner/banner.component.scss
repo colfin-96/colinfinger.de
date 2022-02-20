@@ -6,61 +6,32 @@ section.banner {
   width: 100vw;
 
   justify-content: center;
-  align-items: center;
+
   text-align: center;
   background-color: rgb(28 25 23 / 1);
 
-  @apply text-stone-200;
-
-  animation: banner 2s 1s forwards;
-}
-
-@keyframes banner {
-  0% {
-    // opacity: 1;
-    background-color: rgb(28 25 23 / 1);
-  }
-  100% {
-    // opacity: 0;
-    background-color: rgb(28 25 23 / 0);
-  }
+  @apply text-stone-200
+  items-start md:items-center;
 }
 
 .inner {
   opacity: 1;
-  animation: inner 4s cubic-bezier(0.75, 0, 0.25, 1) forwards;
-}
-
-@keyframes inner {
-  0% {
-    color: transparent;
-  }
-  30% {
-    color: rgba(240 240 240 / 1);
-  }
-  70% {
-    color: rgba(240 240 240 / 1);
-  }
-  100% {
-    color: transparent;
-  }
+  @apply mt-8 md:mt-0
+  mb-0 md:mb-4;
 }
 
 h2 {
   @apply text-2xl font-semibold tracking-widest;
-  animation: text-grow 1s forwards;
 }
 
 p {
   @apply tracking-widest;
-  animation: text-grow 1s forwards;
 }
 
-@keyframes text-grow {
-  0% {
-    @apply tracking-tighter;
-  }
-  100% {
-    @apply tracking-widest;
-  }
+.line {
+  display: block;
+  height: 2px;
+  background-color: wheat;
+  margin-bottom: 8px;
+  margin-top: 12px;
 }

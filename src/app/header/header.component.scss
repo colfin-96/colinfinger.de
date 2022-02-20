@@ -1,17 +1,9 @@
 .wrapper {
-  background-color: transparent;
-  position: fixed;
+  background-color: var(--header-color);
+  // position: fixed;
+
   width: 100vw;
-  opacity: 0;
+  box-shadow: 0 8px 20px 0px rgb(10 10 10 / 0.5);
 
-  animation: wrapper 2s 2s forwards;
-}
-
-@keyframes wrapper {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  @apply mb-4;
 }
