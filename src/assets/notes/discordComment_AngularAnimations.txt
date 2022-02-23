@@ -1,0 +1,7 @@
+Animations work fine, but there isn't anything special in Storybook to make it easy to create stories for them. If the animation triggers on 'enter' then it should get triggered anytime there is a change that re-renders the component. If the trigger is based on an input then you could make that input a Storybook Control and it should retrigger each time the control changes.
+
+Ideally, I would expect a story per animation or a control if they can be changed by an input.
+
+This isn't exactly what you probably want, but may work for development. If your animation triggers when the component renders then you could add Interactions. Each time you step back or rerun the interactions then it should trigger your animation.
+
+To trigger the same animation from a Control, without re-rendering the story, you could probably add a decorator containing an animation that triggers based on value and have it wrap your story's component with an animateChild(). I don't think that would cover all animation triggers though, so there is probably a better way. 
