@@ -97,7 +97,7 @@
         },
         {
             "name": "BannerComponent",
-            "id": "component-BannerComponent-6f4925e8792b4f4950a07e4f3eb2e47d6c024f4fbadb9d82fb26aa84cdafe5d2ad9e4cff012e84cca13fa432a48f954ea9e896d98a5c10f591112dd18bb74b26",
+            "id": "component-BannerComponent-9bb49727298807cb6df9f27f0cc966de304d0b4d4003b3e6bf9062c7b46ec11c068f6e5ec4e32875fd9fec2c592d37a263b50b78ca3bdda6bd4f8919d4e55a78",
             "file": "src/app/banner/banner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -124,7 +124,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 78
+                    "line": 22
                 }
             ],
             "methodsClass": [
@@ -134,7 +134,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 82,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -151,7 +151,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 84,
+                    "line": 28,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -174,7 +174,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {\n  trigger,\n  state,\n  style,\n  animate,\n  transition,\n  animateChild,\n  query,\n  group,\n  AnimationEvent,\n} from '@angular/animations';\n\n@Component({\n  selector: 'app-banner',\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss'],\n  animations: [\n    trigger('initializeBanner', [\n      transition(':enter', [\n        group([\n          animate(\n            '1s cubic-bezier(0.65, 0, 0.35, 1)',\n            style({\n              backgroundColor: 'rgba(28 25 23 / 1)',\n            })\n          ),\n          animate(\n            '0.4s 2.5s cubic-bezier(0.65, 0, 0.35, 1)',\n            style({\n              opacity: 0,\n            })\n          ),\n          query('@innerText', animateChild()),\n          query('@innerText2', animateChild()),\n          query('@line', animateChild()),\n        ]),\n      ]),\n    ]),\n    trigger('innerText', [\n      transition(':enter', [\n        style({\n          opacity: 0,\n        }),\n        animate(\n          '300ms 500ms cubic-bezier(0.65, 0, 0.35, 1)',\n          style({ opacity: 1 })\n        ),\n      ]),\n    ]),\n    trigger('innerText2', [\n      transition(':enter', [\n        style({\n          opacity: 0,\n        }),\n        animate(\n          '300ms 500ms cubic-bezier(0.65, 0, 0.35, 1)',\n          style({ opacity: 1 })\n        ),\n      ]),\n    ]),\n    trigger('line', [\n      transition(':enter', [\n        style({\n          transform: 'scale(0,0)',\n        }),\n        animate(\n          '0.5s 0.5s cubic-bezier(0.65, 0, 0.35, 1)',\n          style({\n            transform: 'scale(1,1)',\n          })\n        ),\n      ]),\n    ]),\n  ],\n})\nexport class BannerComponent implements OnInit {\n  componentVisible = true;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  onInitializeBannerDone(event: AnimationEvent) {\n    console.log(event);\n    this.componentVisible = false;\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {\n  trigger,\n  state,\n  style,\n  animate,\n  transition,\n  animateChild,\n  query,\n  group,\n  AnimationEvent,\n} from '@angular/animations';\nimport { bannerAnimation } from './banner.animations';\n\n@Component({\n  selector: 'app-banner',\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss'],\n  animations: [bannerAnimation],\n})\nexport class BannerComponent implements OnInit {\n  componentVisible = true;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  onInitializeBannerDone(event: AnimationEvent) {\n    console.log(event);\n    this.componentVisible = false;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -189,7 +189,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 78
+                "line": 22
             },
             "implements": [
                 "OnInit"
@@ -706,6 +706,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "bannerAnimation",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/banner/banner.animations.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "animation([\r\n  trigger('initializeBanner', [\r\n    transition(':enter', [\r\n      group([\r\n        animate(\r\n          '1s cubic-bezier(0.65, 0, 0.35, 1)',\r\n          style({\r\n            backgroundColor: 'rgba(28 25 23 / 1)',\r\n          })\r\n        ),\r\n        animate(\r\n          '0.4s 2.5s cubic-bezier(0.65, 0, 0.35, 1)',\r\n          style({\r\n            opacity: 0,\r\n          })\r\n        ),\r\n        query('@innerText', animateChild()),\r\n        query('@innerText2', animateChild()),\r\n        query('@line', animateChild()),\r\n      ]),\r\n    ]),\r\n  ]),\r\n  trigger('innerText', [\r\n    transition(':enter', [\r\n      style({\r\n        opacity: 0,\r\n      }),\r\n      animate(\r\n        '300ms 500ms cubic-bezier(0.65, 0, 0.35, 1)',\r\n        style({ opacity: 1 })\r\n      ),\r\n    ]),\r\n  ]),\r\n  trigger('innerText2', [\r\n    transition(':enter', [\r\n      style({\r\n        opacity: 0,\r\n      }),\r\n      animate(\r\n        '300ms 500ms cubic-bezier(0.65, 0, 0.35, 1)',\r\n        style({ opacity: 1 })\r\n      ),\r\n    ]),\r\n  ]),\r\n  trigger('line', [\r\n    transition(':enter', [\r\n      style({\r\n        transform: 'scale(0,0)',\r\n      }),\r\n      animate(\r\n        '0.5s 0.5s cubic-bezier(0.65, 0, 0.35, 1)',\r\n        style({\r\n          transform: 'scale(1,1)',\r\n        })\r\n      ),\r\n    ]),\r\n  ]),\r\n])"
+            },
+            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -853,12 +863,34 @@
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "XYZ",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/banner/banner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "() => ({\r\n  props: {\r\n    componentVisible: true,\r\n  },\r\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/banner/banner.animations.ts": [
+                {
+                    "name": "bannerAnimation",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/banner/banner.animations.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "animation([\r\n  trigger('initializeBanner', [\r\n    transition(':enter', [\r\n      group([\r\n        animate(\r\n          '1s cubic-bezier(0.65, 0, 0.35, 1)',\r\n          style({\r\n            backgroundColor: 'rgba(28 25 23 / 1)',\r\n          })\r\n        ),\r\n        animate(\r\n          '0.4s 2.5s cubic-bezier(0.65, 0, 0.35, 1)',\r\n          style({\r\n            opacity: 0,\r\n          })\r\n        ),\r\n        query('@innerText', animateChild()),\r\n        query('@innerText2', animateChild()),\r\n        query('@line', animateChild()),\r\n      ]),\r\n    ]),\r\n  ]),\r\n  trigger('innerText', [\r\n    transition(':enter', [\r\n      style({\r\n        opacity: 0,\r\n      }),\r\n      animate(\r\n        '300ms 500ms cubic-bezier(0.65, 0, 0.35, 1)',\r\n        style({ opacity: 1 })\r\n      ),\r\n    ]),\r\n  ]),\r\n  trigger('innerText2', [\r\n    transition(':enter', [\r\n      style({\r\n        opacity: 0,\r\n      }),\r\n      animate(\r\n        '300ms 500ms cubic-bezier(0.65, 0, 0.35, 1)',\r\n        style({ opacity: 1 })\r\n      ),\r\n    ]),\r\n  ]),\r\n  trigger('line', [\r\n    transition(':enter', [\r\n      style({\r\n        transform: 'scale(0,0)',\r\n      }),\r\n      animate(\r\n        '0.5s 0.5s cubic-bezier(0.65, 0, 0.35, 1)',\r\n        style({\r\n          transform: 'scale(1,1)',\r\n        })\r\n      ),\r\n    ]),\r\n  ]),\r\n])"
+                }
+            ],
             "src/test.ts": [
                 {
                     "name": "context",
@@ -1019,6 +1051,18 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
+            ],
+            "src/app/banner/banner.stories.ts": [
+                {
+                    "name": "XYZ",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/banner/banner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "() => ({\r\n  props: {\r\n    componentVisible: true,\r\n  },\r\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -1053,12 +1097,32 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/banner/banner.animations.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "bannerAnimation",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/banner/banner.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "BannerComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/banner/banner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "XYZ",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

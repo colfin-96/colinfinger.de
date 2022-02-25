@@ -1,10 +1,10 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { BannerComponent } from './banner.component';
+import { CardComponent } from './card.component';
 
 export default {
-  title: 'Animations/Banner',
-  component: BannerComponent,
+  title: 'Atom/Card',
+  component: CardComponent,
   decorators: [
     moduleMetadata({
       imports: [BrowserAnimationsModule],
@@ -12,8 +12,10 @@ export default {
   ],
 } as Meta;
 
-export const Default: Story = () => ({
+export const Default: Story = () => ({});
+
+export const Height100pixel: Story = () => ({
   props: {
-    componentVisible: true,
+    height: '100px',
   },
 });

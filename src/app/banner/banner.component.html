@@ -2,7 +2,7 @@
   class="banner"
   *ngIf="componentVisible"
   [@initializeBanner]="true"
-  (@initializeBanner.done)="onInitializeBannerDone($event)"
+  (@initializeBanner.done)="onInitializeBannerDone()"
 >
   <div class="inner">
     <div class="line" [@line]="true"></div>

@@ -19,3 +19,19 @@ span {
   // color: wheat;
   margin-left: 16px;
 }
+
+.mainScreenCard {
+  height: calc(100vh - 7rem);
+}
+
+ul {
+  li {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+}
+
+a {
+  text-decoration-line: underline;
+  color: rgb(240, 195, 98);
+}

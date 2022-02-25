@@ -7,8 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() title = '';
+  @Input() height = '';
+  @Input() width = '';
+
+  cardStyles!: { [key: string]: string };
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cardStyles = { height: this.height, width: this.width };
+  }
 }

@@ -1,5 +1,8 @@
 .card {
-  @apply p-4 m-4 bg-gray-100 rounded shadow-lg;
+  @apply p-4 m-4;
+
+  box-shadow: var(--shadow);
+  border-radius: 8px;
 }
 
 .title {

@@ -1,10 +1,61 @@
-<app-banner></app-banner>
+<!-- TODO: enable next line for intro banner :) -->
+<!-- <app-banner></app-banner> -->
 
 <app-header></app-header>
 
-<p class="emptyPageWarning">
+<!-- <div class="flex justify-center items-center"> -->
+<div class="grid grid-cols-12">
+  <app-card class="sm:col-span-2 col-span-4">
+    <h1>About Me</h1>
+  </app-card>
+  <app-card class="sm:col-span-10 col-span-8">
+    Hi, I'm Colin. <br />
+    I'm 25 years old and come from Cologne, Germany. On this website you'll find
+    some information on who I am and what I like to do.
+  </app-card>
+  <app-card class="sm:col-span-2 col-span-4"> <h1>Projects</h1></app-card>
+  <app-card class="sm:col-span-10 col-span-8">
+    <ul>
+      <li>
+        Code Blue: A controls library based on Syncfusion that I am creating for
+        Serviceware SE. Sorry - private project ;-)
+      </li>
+      <li>
+        <a href="https://github.com/colfin-96/lyricon">Lyricon</a>: A small
+        application for storing my favourite hymn songs so that I don't need to
+        search for them in various other books.
+      </li>
+      <li>
+        <a href="https://github.com/colfin-96/colinfinger.de">This Website</a>:
+        My personal website where I can test my skills ^^
+      </li>
+      <li>
+        <a href="https://github.com/colfin-96/BibleExplorer">Bible Explorer</a>:
+        I did NOT get very far with this. The idea is to have an app with which
+        you can read the bible but also create notes for verses.
+      </li>
+      <li>
+        <a href="https://github.com/colfin-96/signatureGen"
+          >Signature Generator</a
+        >: An application for creating a copyable signature for Outlook.
+      </li>
+    </ul>
+  </app-card>
+  <app-card class="sm:col-span-2 col-span-4"> <h1>Skills</h1></app-card>
+  <app-card class="sm:col-span-10 col-span-8">
+    <ul>
+      <li>HTML</li>
+      <li>CSS (including Frameworks like Bootstrap or Tailwind)</li>
+      <li>JavaScript / TypeScript</li>
+      <li>Angular</li>
+      <li>Storybook</li>
+    </ul>
+  </app-card>
+</div>
+
+<!-- <p class="emptyPageWarning">
   This website has no content yet. Please be patient :)
-</p>
+</p> -->
 
 <!-- <div class="wrapper">
   <app-card title="About Me"
