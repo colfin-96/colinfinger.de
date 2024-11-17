@@ -9,3 +9,19 @@ body {
   background-color: var(--bg-color);
   color: #f3f3f3;
 }
+
+h1 {
+  @apply text-4xl font-bold mb-2;
+}
+
+h2 {
+  @apply text-2xl font-bold mb-2;
+}
+
+h3 {
+  @apply text-xl font-bold mb-2;
+}
+
+h4 {
+  @apply text-lg font-bold mb-2;
+}
